@@ -74,3 +74,10 @@ body {
 	background-color: rgba(242, 174, 46, .15);
 	/* background-image: url("img/map-marker-orange-32.png"); */
 }
+.footer {
+    bottom:0;
+    background:#0f589f;
+}
+.footer a{
+    text-decoration:none;
+}
