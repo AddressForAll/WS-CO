@@ -334,3 +334,10 @@ body {
 .ol-overviewmap .ol-overviewmap-box:hover {
     cursor: move;
 }
+.footer {
+    bottom:0;
+    background:#0f589f;
+}
+.footer a {
+    text-decoration:none;
+}
