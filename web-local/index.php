@@ -78,12 +78,14 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
                 </li>
               </ul>
             </li>
+
             <!-- li>
               <a href="https://local.addressforall.org/contribua">Contribuya</a>
             </li -->
-            <li>
+            <!-- li>
               <a href="https://local.addressforall.org/parceiros">Parceiros</a>
-            </li>
+            </li -->
+
             <li>
               <a href="#!">Address For All</a>
               <ul class="nav-dropdown">
