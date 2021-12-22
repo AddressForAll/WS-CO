@@ -7,7 +7,9 @@
 <p>&nbsp; <a href="https://local.addressforall.org/evento">Webinar miercoles 22 de diciembre de 2021</a>,<br/>&nbsp; 14:00 en hora de Colombia (GMT-5)</p>
 
 <h2>&nbsp;Mapa</h2>
-<p>&nbsp; <a target="_mapa" href="https://local.addressforall.org/map">Búsqueda de direcciones en el mapa</a></p>
+<p>&nbsp; <a target="_mapa" href="https://local.addressforall.org/map">Búsqueda de direcciones en el mapa</a>.
+  Ver también <a href="./map_instructions">instrucciones</a>.
+</p>
 
 	</div>
 </section>

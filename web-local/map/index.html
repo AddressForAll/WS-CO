@@ -27,7 +27,7 @@
 			<button id="clear-btn" class="rounded-circle">x</button> 
 			<select name="sel_city" id="sel_city" onChange="window.location.replace('https://local.addressforall.org/map?'+this.value.toLowerCase())">
                           <option id="city1">Medellin</option><option id="city2">Bogota</option>
-			</select>
+			</select>&nbsp;&nbsp;<a target="_main" title="Instrucciones, cómo buscar direcciones" href="https://local.addressforall.org/map_instructions"><big>?</big></a>
 		</form>
 
 		<div id="afo-results" class="">
@@ -44,9 +44,7 @@
 	<!-- <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"
 		integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script> -->
 	<script>
-	if (window.location.search=='?bogota') {
-            document.getElementById('sel_city').value='Bogota';
-        }
+          document.getElementById('sel_city').value = (window.location.search=='?bogota')? 'Bogota': 'Medellin';
 	</script>		
 </body>
 
