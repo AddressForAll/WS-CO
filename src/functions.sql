@@ -41,9 +41,7 @@ COMMENT ON FUNCTION api.get_centroid() IS 'Returns the center point of the polyg
 -- DROP FUNCTION IF EXISTS api.search(text, integer);
 CREATE OR REPLACE FUNCTION api.search(_q text, lim integer DEFAULT 100) RETURNS json LANGUAGE 'sql' COST 100 IMMUTABLE PARALLEL UNSAFE AS $BODY$ WITH q AS (
 		SELECT *,
-			(
-				(lower(_q) <->q) + (lower(_q) <->(properties->>'address')::text) + (lower(_q) <->(properties->>'display_name')::text)
-			) / 3 AS diff
+			lower(_q) <->q AS diff
 		FROM api.search
 		ORDER BY diff
 		LIMIT lim
