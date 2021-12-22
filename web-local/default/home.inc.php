@@ -4,10 +4,10 @@
 		<span class="title">Direcciones de Colombia</span>
 
 <h2>&nbsp; Evento</h2>
-<p>&nbsp; <a href="https://local.addressforall.org/evento">Webinar miercoles 22 de diciembre de 2021</a>,<br/>&nbsp; 14:00 en hora de Colombia (GMT-5)</p>
+<p>&nbsp; <a style="background-color: #FFFFFF" href="https://local.addressforall.org/evento">Webinar miercoles 22 de diciembre de 2021</a>,<br/>&nbsp; 14:00 en hora de Colombia (GMT-5)</p>
 
 <h2>&nbsp;Mapa</h2>
-<p>&nbsp; <a target="_mapa" href="https://local.addressforall.org/map">Búsqueda de direcciones en el mapa</a>.
+<p>&nbsp; <a style="background-color: #FFFFFF" target="_mapa" href="https://local.addressforall.org/map">Búsqueda de direcciones en el mapa</a>.
   Ver también <a href="./map_instructions">instrucciones</a>.
 </p>
 

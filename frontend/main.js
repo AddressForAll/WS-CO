@@ -108,7 +108,7 @@ const searchBounded = (term, boundingBox) => {
     data: JSON.stringify({
       _q: term,
       viewbox: boundingBox,
-      lim: 1000,
+      lim: 100, //only visual or LIMIT on API and SQL?? need to reduce server demand
     }),
     dataType: "json",
     crossDomain: true,
