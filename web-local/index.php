@@ -138,11 +138,12 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
 
   <!-- START LICENSE -->
   <section class="licenca">
-    <span>Base de endereços do Brasil com
+    <span>Base de direcciones con
       <a href="https://opendefinition.org/od/2.1/pt-br/" target="_blank">
-        <b>Licença Aberta</b>
+        <b>Licencia Abierta</b>
         &nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Open_Definition_logo.png" title="Licença Aberta" alt="Logo Licença Aberta" class="logo-licenca" /></a>
     </span>
+    <br/><small><a href="https://AddressForAll.org">AddressForAll.org</a></small>
   </section>
   <!-- END LICENSE -->
 
