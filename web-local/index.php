@@ -1,9 +1,11 @@
 <?php
-// CONTROLLER: 
+// CONTROLLER: xx
 $apiPrefix1   = isset($_GET['api_p1']) ? trim($_GET['api_p1'], '/') : '';
 $nomeDaPagina = isset($_GET['uri']) ?    trim($_GET['uri'],    '/') : '';
 $LOCAL = '';
 $SITE = 'https://local.addressforall.org';
+//print "len= ".strlen($nomeDaPagina)." nome=$nomeDaPagina ;  bar=".substr($nomeDaPagina,2,1); exit(0);
+
 if (substr($nomeDaPagina,2,1)=='/' || (strlen($nomeDaPagina)==2 && strtoupper($nomeDaPagina)==$nomeDaPagina) ) {
   $LOCAL = substr($nomeDaPagina,0,2);
   $nomeDaPagina = substr($nomeDaPagina,3);
@@ -12,6 +14,7 @@ if (substr($nomeDaPagina,2,1)=='/' || (strlen($nomeDaPagina)==2 && strtoupper($n
   include_once("default/$LOCAL/_index.php");
   exit(0);
 }
+//print "passou! com '$nomeDaPagina'"; exit(0);
 
 $urnRegexes = [
    'br;sp;sao.paulo:associacao;dns-addressforall.org:estatuto:2020-04-03'   => '_private/A4A-Estatuto2020-04-03.htm'

@@ -2,8 +2,9 @@
 <section class="main-figure">
 	<div class="main-text">
 		<span class="title">Direcciones de Colombia</span>
+                <span class="title"><small>(representante local AddressForAll)</small></span>
 
-<h2>&nbsp; Evento</h2>
+<h2>&nbsp; Eventxo</h2>
 <p>&nbsp; <a style="background-color: #FFFFFF" href="https://local.addressforall.org/evento">Webinar miercoles 22 de diciembre de 2021</a>,<br/>&nbsp; 14:00 en hora de Colombia (GMT-5)</p>
 
 <h2>&nbsp;Mapa</h2>
