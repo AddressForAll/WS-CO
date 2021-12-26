@@ -1,7 +1,21 @@
 <?php
-// CONTROLLER: 
+// CONTROLLER: xx
 $apiPrefix1   = isset($_GET['api_p1']) ? trim($_GET['api_p1'], '/') : '';
 $nomeDaPagina = isset($_GET['uri']) ?    trim($_GET['uri'],    '/') : '';
+$LOCAL = '';
+$SITE = 'https://local.addressforall.org';
+//print "len= ".strlen($nomeDaPagina)." nome=$nomeDaPagina ;  bar=".substr($nomeDaPagina,2,1); exit(0);
+
+if (substr($nomeDaPagina,2,1)=='/' || (strlen($nomeDaPagina)==2 && strtoupper($nomeDaPagina)==$nomeDaPagina) ) {
+  $LOCAL = substr($nomeDaPagina,0,2);
+  $nomeDaPagina = substr($nomeDaPagina,3);
+  // print "local=$LOCAL; nome=$nomeDaPagina"; exit(0);
+  $SITE  = "https://local.addressforall.org/$LOCAL";
+  include_once("default/$LOCAL/_index.php");
+  exit(0);
+}
+//print "passou! com '$nomeDaPagina'"; exit(0);
+
 $urnRegexes = [
    'br;sp;sao.paulo:associacao;dns-addressforall.org:estatuto:2020-04-03'   => '_private/A4A-Estatuto2020-04-03.htm'
   ,':estatuto:2020-04-03' => '_private/A4A-Estatuto2020-04-03.htm'
@@ -35,7 +49,7 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Address For All | O site dos endereços brasileiros</title>
+  <title>Address For All Colombia</title>
   <link rel="shortcut icon" type="image/png" href="/resources/img/address_for_all-01-colorful.ico.png" />
   <link rel="stylesheet" href="/resources/css/navbar.css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
@@ -55,43 +69,45 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
     <section class="navigation">
       <div class="nav-container">
         <div class="brand">
-          <a href="https://local.addressforall.org/home" class="logo"><img src="/resources/img/address_for_all-01-colorful.png" /></a>
+          <a href="<?=$SITE?>/home" class="logo"><img src="/resources/img/address_for_all-01-colorful.png" /></a>
         </div>
         <nav>
           <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
           <ul class="nav-list">
             <li>
-              <a href="https://local.addressforall.org/evento" title="Evento online 2021-12-22 de AddressForAll Colombia">Evento</a>
+              <a href="<?=$SITE?>/evento" title="Evento online 2021-12-22 de AddressForAll Colombia">Evento</a>
             </li>
             <li>
-              <a target="_mapa" href="https://local.addressforall.org/map" title="Búsqueda de direcciones en el mapa">Mapa</a>
+              <a target="_mapa" href="<?=$SITE?>/map" title="Búsqueda de direcciones en el mapa">Mapa</a>
             </li>
 
             <li>
               <a href="#!">Datos & API</a>
               <ul class="nav-dropdown">
                 <li>
-                  <a href="https://local.addressforall.org/dados">Datos</a>
+                  <a href="<?=$SITE?>/dados">Datos</a>
                 </li>
                 <li>
-                  <a href="https://local.addressforall.org/api">API</a>
+                  <a href="<?=$SITE?>/api">API</a>
                 </li>
               </ul>
             </li>
+
             <!-- li>
-              <a href="https://local.addressforall.org/contribua">Contribuya</a>
+              <a href="<?=$SITE?>/contribua">Contribuya</a>
             </li -->
-            <li>
-              <a href="https://local.addressforall.org/parceiros">Parceiros</a>
-            </li>
+            <!-- li>
+              <a href="<?=$SITE?>/parceiros">Parceiros</a>
+            </li -->
+
             <li>
               <a href="#!">Address For All</a>
               <ul class="nav-dropdown">
                 <li>
-                  <a href="https://local.addressforall.org/quemsomos">Quienes somos</a>
+                  <a href="<?=$SITE?>/quemsomos">Quienes somos</a>
                 </li>
                 <li>
-                  <a href="https://local.addressforall.org/projetos">Proyectos</a>
+                  <a href="<?=$SITE?>/projetos">Proyectos</a>
                 </li>
                 <li>
                   <a href="https://addressforall.org/estatuto">Estatuto</a>
@@ -108,6 +124,7 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
 
 
   <?php
+//print "ola!  ".(substr($nomeDaPagina,2,1));
 
 //$nomeDaPagina = 'local';
 /*    if ($apiPrefix1) {
@@ -138,11 +155,12 @@ elseif ( preg_match('/urn:lex:(.+)$/', $nomeDaPagina, $m) && isset($urnRegexes[$
 
   <!-- START LICENSE -->
   <section class="licenca">
-    <span>Base de endereços do Brasil com
+    <span>Base de direcciones con
       <a href="https://opendefinition.org/od/2.1/pt-br/" target="_blank">
-        <b>Licença Aberta</b>
+        <b>Licencia Abierta</b>
         &nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Open_Definition_logo.png" title="Licença Aberta" alt="Logo Licença Aberta" class="logo-licenca" /></a>
     </span>
+    <br/><small><a href="https://AddressForAll.org">AddressForAll.org</a></small>
   </section>
   <!-- END LICENSE -->
 
