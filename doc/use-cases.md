@@ -22,7 +22,7 @@ La respuesta incluye la cadena de entrada en `query` y la similitud por cada dir
 
 En el sigueinte ejemplo se busca la dirección más parecida a `Calle 95 #69-61`. Para obetner una sola dirección se ha restringido la cantidad de resultados `lim=1`.
 
-<https://api.addressforall.org/test/search?_q=Calle%2095%20%2369-61&lim=1>
+<http://api.addressforall.org/test/search?_q=Calle%2095%20%2369-61&lim=1>
 
 ```json
 [
@@ -49,7 +49,7 @@ En el sigueinte ejemplo se busca la dirección más parecida a `Calle 95 #69-61`
 
 En el sigueinte ejemplo se busca `CL 107 42 Popular`. Para obetner solo tres direcciones se ha restringido la cantidad de resultados `lim=3`. Nótese que que en los dos primeros resultados la similitud es exactamente la misma `"similarity": 0.27868854999542236`.
 
-<https://api.addressforall.org/test/search?_q=CL%20107%2042%20Popular&lim=3>
+<http://api.addressforall.org/test/search?_q=CL%20107%2042%20Popular&lim=3>
 
 ```json
 {
@@ -120,7 +120,7 @@ La misma consulta también se puede hacer mediante RPC o _Remote Procedure Call_
 
 ```batch
 curl -X POST \
-  https://api.addressforall.org/test/_sql/rpc/search \
+  http://api.addressforall.org/test/_sql/rpc/search \
   -H 'Content-Type: application/json' \
   -d '{"_q":"CL 107C #42B-42 Popular", "lim":3}'
 ```
@@ -135,7 +135,7 @@ Es la que se usa en aplicaciones de WebMapping donde se puede obtener el recuadr
 
 ```batch
 curl -X POST \
-  https://api.addressforall.org/test/_sql/rpc/search_bounded \
+  http://api.addressforall.org/test/_sql/rpc/search_bounded \
   -H 'Content-Type: application/json' \
   -d '{"_q":"CL 107C #42B-42 Popular", "viewbox":[-75.552, 6.291, -75.543, 6.297], "lim":3}'
 ```
@@ -209,7 +209,7 @@ Encuentra las coindidencias más cercanas a una localización dada. Se le pasa u
 
 ```batch
 curl -X POST \
-  https://api.addressforall.org/test/_sql/rpc/search_nearby \
+  http://api.addressforall.org/test/_sql/rpc/search_nearby \
   -H 'Content-Type: application/json' \
   -d '{"_q":"Calle 1BB #48A ESTE-522 El Cerro", "loc":[-75.486799, 6.194510],"radius":200, "lim":3}'
 ```
@@ -282,7 +282,7 @@ curl -X POST \
 
 ## 2. Geocodificación Inversa
 
-<https://api.addressforall.org/test/reverse?lon=-75.486799&lat=6.194510>
+<http://api.addressforall.org/test/reverse?lon=-75.486799&lat=6.194510>
 
 ```json
 [
@@ -307,7 +307,7 @@ curl -X POST \
 ]
 ```
 
-<https://api.addressforall.org/test/reverse?lon=-75.486799&lat=6.194510&radius=200&lim=3>
+<http://api.addressforall.org/test/reverse?lon=-75.486799&lat=6.194510&radius=200&lim=3>
 
 ```json
 {
@@ -373,8 +373,8 @@ curl -X POST \
 
 ## 3. Recuperación de direcciones
 
-<https://api.addressforall.org/test/lookup?address=443091>  
-<https://api.addressforall.org/test/lookup?address=CL%201BB%20%2348A%20ESTE-522%20%280130%29>
+<http://api.addressforall.org/test/lookup?address=443091>  
+<http://api.addressforall.org/test/lookup?address=CL%201BB%20%2348A%20ESTE-522%20%280130%29>
 
 ```json
 {
