@@ -21,7 +21,7 @@ const Bogota = {
   NDCP: Output + "20211221_nd_postalcode_bogota.geojson",
   NDSCAT: Output + "20211221_nd_sector_catastral_bogota.geojson",
   Vias: Output + "20211221_vias_bogota.json",
-  SCAN: Output + "20211221_scanombres_bogota.geojson",
+  SCAN: Output + "20211221_scanombres_bogota.json",
 };
 const Colombia = "";
 

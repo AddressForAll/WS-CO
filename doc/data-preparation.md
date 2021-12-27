@@ -10,6 +10,7 @@
 - [4. Anexos y Anotaciones](#4-anexos-y-anotaciones)
   - [4.1. Datos procesados](#41-datos-procesados)
   - [4.2. Abreviaturas](#42-abreviaturas)
+  - [Formato de importación](#formato-de-importación)
 - [5. Referencias](#5-referencias)
 
 ## 1. Medellín
@@ -71,7 +72,7 @@ Bogota = {
   Vias: "Output/20211221_vias_bogota.json",
   NDCP: "Output/20211221_nd_postalcode_bogota.geojson",
   NDSCAT: "Output/20211221_nd_sector_catastral_bogota.geojson",
-  SCAN: "Output/20211221_scanombres_bogota.geojson",
+  SCAN: "Output/20211221_scanombres_bogota.json",
 };
 Colombia = {};
 ```
@@ -106,6 +107,38 @@ TiposDeVia = {
   VI: "Vía",
 };
 ```
+
+### Formato de importación
+
+```text
+lon,lat,number,street,city,district,region,postcode,id,hash
+```
+
+| Campo          | Medellín                                       | Bogotá                                         | Colombia |
+| -------------- | ---------------------------------------------- | ---------------------------------------------- | -------- |
+| `lon`          | `ND.lon`                                       | `ND.lon`                                       |          |
+| `lat`          | `ND.lat`                                       | `ND.lat`                                       |          |
+| `number`       | `ND.PLACA`                                     | `ND.PDOTEXTO`                                  |          |
+| `street`       | `ND.VIA`                                       | `ND.PDONVIAL`                                  |          |
+| `city`         | `"Medellín"`                                   | `"Bogotá"`                                     |          |
+| `district`     | `null`                                         | `null`                                         |          |
+| `region`       | `"ANT"`                                        | `"DC"`                                         |          |
+| `postcode`     | `NDCP.CODIGO_POS`                              | `NDCP.CODIGO_POS + "-" + NDCP.SECUENCIA`       |          |
+| `id`           | `ND.OBJECTID`                                  | `ND.PDOCODIGO`                                 |          |
+| `hash`         | `null`                                         | `null`                                         |          |
+|                |                                                |                                                |          |
+| `cbml`         | `ND.CBML`                                      |                                                |          |
+| `tipo_via`     | `ND.TIPO_VIA`                                  | `street.split(" ")[0]`                         |          |
+| `tipo_cruce`   | `ND.TIPO_CRUCE`                                |                                                |          |
+| `codigo_man`   | `ND.CODIGO_MAN`                                |                                                |          |
+| `codigo_bar`   | `ND.CODIGO_BAR`                                |                                                |          |
+| `nombre_bar`   | `ND.NOMBRE_BAR`                                | `SCAN[lonlat]`                                 |          |
+| `codigo_com`   | `ND.CODIGO_COM`                                |                                                |          |
+| `nombre_com`   | `ND.NOMBRE_COM`                                |                                                |          |
+|                |                                                |                                                |          |
+| `via_name`     | `Vias[street]`                                 | `Vias[street]`                                 |          |
+| `address`      | `street #number`                               | `street #number`                               |          |
+| `display_name` | `TipoDeVia[tipo_via] street number nombre_bar` | `TipoDeVia[tipo_via] street number nombre_bar` |          |
 
 ## 5. Referencias
 
